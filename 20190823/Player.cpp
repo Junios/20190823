@@ -47,7 +47,7 @@ void Player::Move(int KeyCode, class Map* map)
 		NewPlayerX++;
 	}
 
-	if (map->data[NewPlayerY][NewPlayerX] != 0 )
+	if (map->data[NewPlayerY][NewPlayerX] == 0 )
 	{
 		X = NewPlayerX;
 		Y = NewPlayerY;
