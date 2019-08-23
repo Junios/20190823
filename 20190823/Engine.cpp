@@ -40,7 +40,7 @@ Engine::~Engine()
 
 void Engine::Input()
 {
-	KeyCode = getch();
+	KeyCode = _getch();
 }
 
 void Engine::Tick()
@@ -54,14 +54,30 @@ void Engine::Tick()
 		return;
 	}
 
-	player->Move();
+	player->Move(KeyCode, map);
 	monster->Move();
-	gameMode->CheckRule();
+	EGameOverType result = gameMode->CheckRule(player, monster, goal);
+	switch (result)
+	{
+		case EGameOverType::Dead:
+		{
+			bIsRunning = false;
+		}
+		break;
+		case EGameOverType::Escape:
+		{
+			bIsRunning = false;
+		}
+		break;
+	}
+	
+
 }
 
 void Engine::Render()
 {
-
+	map->Render();
+	player->Render();
 }
 
 void Engine::Run()

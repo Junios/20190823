@@ -4,6 +4,8 @@
 
 Monster::Monster()
 {
+	X = 5;
+	Y = 5;
 }
 
 

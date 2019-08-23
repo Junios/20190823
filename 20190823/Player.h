@@ -9,7 +9,10 @@ public:
 	int Y;
 
 	void Initialize();
-	void Move();
+	void Move(int KeyCode, class Map* map);
 	char Shape;
+
+
+	void Render();
 };
 

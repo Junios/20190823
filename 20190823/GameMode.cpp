@@ -1,6 +1,7 @@
 #include "GameMode.h"
-
-
+#include "Player.h"
+#include "Monster.h"
+#include "Goal.h"
 
 GameMode::GameMode()
 {
@@ -11,7 +12,22 @@ GameMode::~GameMode()
 {
 }
 
-int GameMode::CheckRule()
+
+EGameOverType GameMode::CheckRule(Player* player,
+	Monster* monster,
+	Goal* goal)
 {
-	return 0;
+	if (player->X == monster->X &&
+		player->Y == monster->Y)
+	{
+		return EGameOverType::Dead;
+	}
+	else if (player->X == goal->X &&
+		player->Y == goal->Y)
+	{
+		return EGameOverType::Escape;
+	}
+
+
+	return EGameOverType::Playing;
 }
