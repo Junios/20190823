@@ -14,7 +14,13 @@ Engine::Engine()
 
 	player = new Player();
 	goal = new Goal();
-	monster = new Monster();
+
+	monsters.push_back(new Monster());
+	monsters.push_back(new Monster());
+	monsters.push_back(new Monster());
+	monsters.push_back(new Monster());
+	monsters.push_back(new Monster());
+
 	map = new Map();
 	gameMode = new GameMode();
 }
@@ -27,8 +33,15 @@ Engine::~Engine()
 	delete goal;
 	goal = nullptr;
 
-	delete monster;
-	monster = nullptr;
+
+	//메모리 Release
+	for (auto monster : monsters)
+	{
+		delete monster;
+		monster = nullptr;
+	}
+	//벡터 삭제
+	monsters.erase(monsters.begin(), monsters.end());
 
 	delete map;
 	map = nullptr;
@@ -55,21 +68,26 @@ void Engine::Tick()
 	}
 
 	player->Move(KeyCode, map);
-	monster->Move(map);
-	EGameOverType result = gameMode->CheckRule(player, monster, goal);
-	switch (result)
+
+	for (auto monster : monsters)
 	{
-		case EGameOverType::Dead:
-		{
-			bIsRunning = false;
-		}
-		break;
-		case EGameOverType::Escape:
-		{
-			bIsRunning = false;
-		}
-		break;
+		monster->Move(map);
 	}
+
+	//EGameOverType result = gameMode->CheckRule(player, monster, goal);
+	//switch (result)
+	//{
+	//	case EGameOverType::Dead:
+	//	{
+	//		bIsRunning = false;
+	//	}
+	//	break;
+	//	case EGameOverType::Escape:
+	//	{
+	//		bIsRunning = false;
+	//	}
+	//	break;
+	//}
 	
 
 }
@@ -78,7 +96,12 @@ void Engine::Render()
 {
 	map->Render();
 	player->Render();
-	monster->Render();
+
+	for (auto monster : monsters)
+	{
+		monster->Render();
+	}
+
 	goal->Render();
 }
 

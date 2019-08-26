@@ -1,4 +1,8 @@
 #pragma once
+#include <vector>
+
+using namespace std;
+
 class Engine
 {
 public:
@@ -16,7 +20,9 @@ private:
 
 	class Player* player;
 	class Map* map;
-	class Monster* monster;
+
+	vector<class Monster*> monsters;
+
 	class Goal* goal;
 	class GameMode* gameMode;
 };
