@@ -18,9 +18,14 @@ using namespace std;
 int main()
 {
 	Engine* engine = new Engine();
-	engine->actors.push_back(new Map2());
+	//0 map
+	engine->actors.push_back(new Map());
+	//1 goal
 	engine->actors.push_back(new Goal());
+	//2 Player
 	engine->actors.push_back(new Player());
+
+	//other monsters
 	engine->actors.push_back(new Monster());
 	engine->actors.push_back(new Monster());
 

@@ -11,40 +11,16 @@ Engine::Engine()
 {
 	bIsRunning = true;
 	std::cout << "Engine Constructor" << std::endl;
-
-	//player = new Player();
-	//goal = new Goal();
-
-	//monsters.push_back(new Monster());
-	//monsters.push_back(new Monster());
-	//monsters.push_back(new Monster());
-	//monsters.push_back(new Monster());
-	//monsters.push_back(new Monster());
-
-	//map = new Map();
-	//gameMode = new GameMode();
 }
 
 Engine::~Engine()
 {
-	delete player;
-	player = nullptr;
-
-	delete goal;
-	goal = nullptr;
-
-
-	//메모리 Release
-	for (auto monster : monsters)
+	for (auto actor : actors)
 	{
-		delete monster;
-		monster = nullptr;
+		delete actor;
+		actor = nullptr;
 	}
-	//벡터 삭제
-	monsters.erase(monsters.begin(), monsters.end());
-
-	delete map;
-	map = nullptr;
+	actors.clear();
 
 	delete gameMode;
 	gameMode = nullptr;
@@ -69,25 +45,24 @@ void Engine::Tick()
 
 	for (auto actor : actors)
 	{
-		actor->Tick();
+		//actors 0은 무조건 맵
+		actor->Tick(KeyCode, (Map*)actors[0]);
 	}
 
-	//EGameOverType result = gameMode->CheckRule(player, monster, goal);
-	//switch (result)
-	//{
-	//	case EGameOverType::Dead:
-	//	{
-	//		bIsRunning = false;
-	//	}
-	//	break;
-	//	case EGameOverType::Escape:
-	//	{
-	//		bIsRunning = false;
-	//	}
-	//	break;
-	//}
-	
-
+	EGameOverType result = gameMode->CheckRule(actors);
+	switch (result)
+	{
+		case EGameOverType::Dead:
+		{
+			bIsRunning = false;
+		}
+		break;
+		case EGameOverType::Escape:
+		{
+			bIsRunning = false;
+		}
+		break;
+	}
 }
 
 void Engine::Render()

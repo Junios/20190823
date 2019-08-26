@@ -22,12 +22,6 @@ private:
 	void Tick();
 	void Render();
 
-	class Player* player;
-	class Map* map;
-
-	vector<class Monster*> monsters;
-
-	class Goal* goal;
 	class GameMode* gameMode;
 };
 

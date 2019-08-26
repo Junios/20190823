@@ -15,7 +15,7 @@ void Actor::Input()
 {
 }
 
-void Actor::Tick()
+void Actor::Tick(int KeyCode, class Map* map)
 {
 }
 

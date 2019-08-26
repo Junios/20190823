@@ -7,8 +7,11 @@ public:
 	Monster();
 	~Monster();
 
-	virtual void Move(int Keycode, class Map* map) override;
-	virtual void Tick() override;
+
+	virtual void Tick(int KeyCode, class Map* map) override;
 	virtual void Render() override;
+
+protected:
+	virtual void Move(int KeyCode, class Map* map) override;
 };
 

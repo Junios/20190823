@@ -15,7 +15,7 @@ void Character::Input()
 {
 }
 
-void Character::Tick()
+void Character::Tick(int KeyCode, class Map* map)
 {
 }
 

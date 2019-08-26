@@ -1,16 +1,13 @@
 #pragma once
-#include "Actor.h"
+#include "Character.h"
 
-class Goal : public Actor
+class Goal : public Character
 {
 public:
 	Goal();
 	~Goal();
+	
 
-	int X;
-	int Y;
-
-	char Shape;
-	void Render();
+	virtual void Render() override;
 };
 

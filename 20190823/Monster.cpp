@@ -50,8 +50,9 @@ void Monster::Move(int Keycode, Map* map)
 	}
 }
 
-void Monster::Tick()
+void Monster::Tick(int KeyCode, class Map* map)
 {
+	Move(KeyCode, map);
 }
 
 void Monster::Render()

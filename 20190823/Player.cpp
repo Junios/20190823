@@ -50,9 +50,9 @@ void Player::Move(int KeyCode, class Map* map)
 	}
 }
 
-void Player::Tick()
+void Player::Tick(int KeyCode, class Map* map)
 {
-	//Move()
+	Move(KeyCode, map);
 }
 
 void Player::Render()
