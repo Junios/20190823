@@ -21,10 +21,6 @@ Player::~Player()
 {
 }
 
-void Player::Initialize()
-{
-}
-
 void Player::Move(int KeyCode, class Map* map)
 {
 	int NewPlayerX = X;
@@ -52,6 +48,11 @@ void Player::Move(int KeyCode, class Map* map)
 		X = NewPlayerX;
 		Y = NewPlayerY;
 	}
+}
+
+void Player::Tick()
+{
+	//Move()
 }
 
 void Player::Render()

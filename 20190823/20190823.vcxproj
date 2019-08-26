@@ -139,21 +139,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="GameplayStatics.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Map2.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="GameplayStatics.h" />
     <ClInclude Include="Goal.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Map2.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>

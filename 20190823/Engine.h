@@ -10,6 +10,10 @@ public:
 	~Engine();
 	void Run();
 
+
+	vector<class Actor*> actors;
+
+
 private:
 	bool bIsRunning;
 	int KeyCode;

@@ -1,5 +1,7 @@
 #pragma once
-class Map
+#include "Actor.h"
+
+class Map : public Actor
 {
 public:
 	Map();

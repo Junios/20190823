@@ -19,11 +19,7 @@ Monster::~Monster()
 {
 }
 
-void Monster::Initialize()
-{
-}
-
-void Monster::Move(Map* map)
+void Monster::Move(int Keycode, Map* map)
 {
 	int NewMonsterX = X;
 	int NewMonsterY = Y;
@@ -52,6 +48,10 @@ void Monster::Move(Map* map)
 		X = NewMonsterX;
 		Y = NewMonsterY;
 	}
+}
+
+void Monster::Tick()
+{
 }
 
 void Monster::Render()

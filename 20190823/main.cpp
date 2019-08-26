@@ -5,16 +5,30 @@
 #include <vector>
 #include <list>
 //#include <map>
+#include "Character.h"
+#include "Player.h"
+#include "Monster.h"
+#include "Map.h"
+#include "Map2.h"
+#include "Goal.h"
+#include "Monster.h"
 
 using namespace std;
 
 int main()
 {
 	Engine* engine = new Engine();
+	engine->actors.push_back(new Map2());
+	engine->actors.push_back(new Goal());
+	engine->actors.push_back(new Player());
+	engine->actors.push_back(new Monster());
+	engine->actors.push_back(new Monster());
+
 	engine->Run();
 	delete engine;
 	engine = nullptr;
 
+	
 	return 0;
 }
 

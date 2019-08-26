@@ -12,17 +12,17 @@ Engine::Engine()
 	bIsRunning = true;
 	std::cout << "Engine Constructor" << std::endl;
 
-	player = new Player();
-	goal = new Goal();
+	//player = new Player();
+	//goal = new Goal();
 
-	monsters.push_back(new Monster());
-	monsters.push_back(new Monster());
-	monsters.push_back(new Monster());
-	monsters.push_back(new Monster());
-	monsters.push_back(new Monster());
+	//monsters.push_back(new Monster());
+	//monsters.push_back(new Monster());
+	//monsters.push_back(new Monster());
+	//monsters.push_back(new Monster());
+	//monsters.push_back(new Monster());
 
-	map = new Map();
-	gameMode = new GameMode();
+	//map = new Map();
+	//gameMode = new GameMode();
 }
 
 Engine::~Engine()
@@ -67,11 +67,9 @@ void Engine::Tick()
 		return;
 	}
 
-	player->Move(KeyCode, map);
-
-	for (auto monster : monsters)
+	for (auto actor : actors)
 	{
-		monster->Move(map);
+		actor->Tick();
 	}
 
 	//EGameOverType result = gameMode->CheckRule(player, monster, goal);
@@ -94,15 +92,10 @@ void Engine::Tick()
 
 void Engine::Render()
 {
-	map->Render();
-	player->Render();
-
-	for (auto monster : monsters)
+	for (auto actor : actors)
 	{
-		monster->Render();
+		actor->Render();
 	}
-
-	goal->Render();
 }
 
 void Engine::Run()
