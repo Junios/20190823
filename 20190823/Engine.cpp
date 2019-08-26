@@ -55,7 +55,7 @@ void Engine::Tick()
 	}
 
 	player->Move(KeyCode, map);
-	monster->Move();
+	monster->Move(map);
 	EGameOverType result = gameMode->CheckRule(player, monster, goal);
 	switch (result)
 	{
@@ -78,6 +78,8 @@ void Engine::Render()
 {
 	map->Render();
 	player->Render();
+	monster->Render();
+	goal->Render();
 }
 
 void Engine::Run()

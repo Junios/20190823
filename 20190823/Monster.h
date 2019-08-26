@@ -9,7 +9,9 @@ public:
 	int Y;
 
 	void Initialize();
-	void Move();
+	void Move(class Map* map);
 	char Shape;
+
+	void Render();
 };
 

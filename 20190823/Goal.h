@@ -9,5 +9,6 @@ public:
 	int Y;
 
 	char Shape;
+	void Render();
 };
 
