@@ -8,3 +8,9 @@ void GameplayStatics::GotoXY(int x, int y)
 	Pos.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
+
+void GameplayStatics::SetTextColor(int Foreground, int Background)
+{
+	int color = Foreground + Background * 16;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}

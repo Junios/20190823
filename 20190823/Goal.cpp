@@ -8,6 +8,7 @@ Goal::Goal()
 	X = 8;
 	Y = 8;
 	Shape = 'G';
+	ForegroundColor = YELLOW;
 }
 
 
@@ -17,6 +18,5 @@ Goal::~Goal()
 
 void Goal::Render()
 {
-	GameplayStatics::GotoXY(X, Y);
-	printf("%c", Shape);
+	Character::Render();
 }

@@ -48,6 +48,18 @@
     <ClCompile Include="Map2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Goblin.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Slime.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WildPig.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MapBase.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -80,8 +92,22 @@
     <ClInclude Include="Map2.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Goblin.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Slime.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WildPig.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBase.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
 </Project>

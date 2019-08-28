@@ -14,6 +14,7 @@ Player::Player()
 	X = 1;
 	Y = 1;
 	Shape = 'P';
+	ForegroundColor = RED;
 }
 
 
@@ -57,6 +58,5 @@ void Player::Tick(int KeyCode, class Map* map)
 
 void Player::Render()
 {
-	GameplayStatics::GotoXY(X, Y);
-	printf("%c", Shape);
+	Character::Render();
 }

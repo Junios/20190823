@@ -7,6 +7,7 @@
 
 Map::Map()
 {
+	Size = 10;
 }
 
 
@@ -14,17 +15,13 @@ Map::~Map()
 {
 }
 
-void Map::Initialize()
-{
-}
-
 void Map::Render()
 {
-	system("cls");
+	MapBase::Render();
 
-	for (int y = 0; y < 10; y++)
+	for (int y = 0; y < Size; y++)
 	{
-		for (int x = 0; x < 10; x++)
+		for (int x = 0; x < Size; x++)
 		{
 			GameplayStatics::GotoXY(x, y);
 			printf("%c", Tile[data[y][x]]);

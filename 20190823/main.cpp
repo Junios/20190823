@@ -12,6 +12,9 @@
 #include "Map2.h"
 #include "Goal.h"
 #include "Monster.h"
+#include "Goblin.h"
+#include "Slime.h"
+#include "WildPig.h"
 
 using namespace std;
 
@@ -26,8 +29,9 @@ int main()
 	engine->actors.push_back(new Player());
 
 	//other monsters
-	engine->actors.push_back(new Monster());
-	engine->actors.push_back(new Monster());
+	engine->actors.push_back(new Goblin());
+	engine->actors.push_back(new Slime());
+	engine->actors.push_back(new WildPig());
 
 	engine->Run();
 	delete engine;

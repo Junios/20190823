@@ -12,6 +12,9 @@ Monster::Monster()
 	Y = 5;
 	Shape = 'M';
 	srand(time(nullptr));
+
+	ForegroundColor = WHITE;
+	BackgroundColor = BLACK;
 }
 
 
@@ -57,6 +60,5 @@ void Monster::Tick(int KeyCode, class Map* map)
 
 void Monster::Render()
 {
-	GameplayStatics::GotoXY(X, Y);
-	printf("%c", Shape);
+	Character::Render();
 }

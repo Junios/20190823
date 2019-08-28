@@ -11,6 +11,8 @@ Engine::Engine()
 {
 	bIsRunning = true;
 	std::cout << "Engine Constructor" << std::endl;
+
+	gameMode = new GameMode();
 }
 
 Engine::~Engine()

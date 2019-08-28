@@ -7,7 +7,6 @@ public:
 	Monster();
 	~Monster();
 
-
 	virtual void Tick(int KeyCode, class Map* map) override;
 	virtual void Render() override;
 
